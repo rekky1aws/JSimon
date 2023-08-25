@@ -1,0 +1,56 @@
+body {
+	font-family: Helvetica, sans-serif;
+	background-color: #1D1D1D;
+	padding: 0;
+	margin: 0;
+}
+
+main {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	width: 100vw;
+	height:100vh;
+	justify-content: center;
+	align-items: center;
+}
+
+.simon_button {
+	border:none;
+	border-radius: 25px;
+}
+
+.simon_button:hover {
+	transform: scale(1.02);
+}
+
+.simon_button:active {
+	transform: scale(0.98);
+}
+
+#simon_container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	gap:5px;
+	height:500px;
+	width: 500px;
+	border-radius:50%;
+	overflow: hidden;
+}
+
+.simon_button#blue {
+	background-color: blue;
+}
+
+.simon_button#green {
+	background-color: green;
+}
+
+.simon_button#red {
+	background-color: red;
+}
+
+.simon_button#yellow {
+	background-color: gold;
+}
