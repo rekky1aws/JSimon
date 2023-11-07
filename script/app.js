@@ -1,26 +1,47 @@
+// Class
+class Simon
+{
+	colors = ['red', 'blue', 'green', 'yellow'];
+	list = [];
+
+	construcor()
+	{
+
+	}
+
+	playList ()
+	{
+
+	}
+
+	genNext ()
+	{
+		let newColor = this.colors[Math.floor(Math.random() * this.colors.length)];
+		this.list.push(newColor);
+	}
+
+	pressedBtn (e)
+	{
+		let color = e.target.id;
+
+		// if correct choice
+		let sound = new Audio("/media/sounds/" + color + ".wav");
+		sound.play();
+	}
+}
+
 // Constants
 const btns = document.querySelectorAll('.simon_button');
+const game = new Simon();
 
 // Variables
 let count = 1;
-let gameList = [];
 
 // EventListeners
 btns.forEach( (btn) => {
-	btn.addEventListener('click', pressedBtn);
+	btn.addEventListener('click', game.pressedBtn);
 	count++;
 });
 
-// Functions
-function pressedBtn (e)
-{
-	let color = e.target.id;
-
-	// if correct choice
-	let sound = new Audio("/media/sounds/" + color + ".wav");
-	sound.play();
-}
-
-// generateNextChoice
-
-// playGameList
+// MAIN
+game.genNext();
